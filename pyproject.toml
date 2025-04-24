@@ -1,0 +1,20 @@
+[project]
+name = "jetpunk-solver"
+version = "0.1.0"
+description = "A solver for JetPunk quizzes and automation tool"
+authors = [
+    { name = "Youssef Boueri", email = "youssef3698@gmail.com"}
+]
+
+dependencies = [
+    "beautifulsoup4",
+    "requests",
+    "pyautogui",
+    "unidecode",
+    "configparser",
+]
+
+requires-python = ">=3.8,<4.0"
+
+[project.scripts]
+jetpunk-solver = "solver.main:main"
