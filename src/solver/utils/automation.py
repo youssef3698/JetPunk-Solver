@@ -7,6 +7,7 @@ import pyautogui
 
 # Local Application Imports
 from solver.config.config import get_automation_delay, get_automation_sleep
+from solver.utils.text_cleaning import clean_answer_text
 
 
 def clear_input_field() -> None:
@@ -26,7 +27,8 @@ def type_answers(answers: List[str], submit: bool = False) -> None:
     sleep = get_automation_sleep()
     time.sleep(delay)  # Initial delay before typing
     for answer in answers:
-        pyautogui.typewrite(answer)
+        clean_answer = clean_answer_text(answer)
+        pyautogui.typewrite(clean_answer)
         clear_input_field()
         if submit:
             pyautogui.press("enter")
