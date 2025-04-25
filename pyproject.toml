@@ -12,6 +12,7 @@ dependencies = [
     "pyautogui",
     "unidecode",
     "configparser",
+    "cloudscraper",
 ]
 
 requires-python = ">=3.8,<4.0"
