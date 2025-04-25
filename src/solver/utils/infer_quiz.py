@@ -45,7 +45,12 @@ def infer_quiz_type(
     answer = answers[0]
 
     if "typeins" in answer:
-        return "all_words"
+        display = answer.get("display", "")
+        # If display is a checkmark or empty, it's an all_words quiz
+        if display.strip() in ("", "✓"):
+            return "all_words"
+        else:
+            return "fill_in_the_blank"
     elif "display" in answer:
         return "fill_in_the_blank"
     elif "choices" in answer:
